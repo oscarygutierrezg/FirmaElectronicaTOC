@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by TeaM DJiNN (TeaM DJiNN) --><xs:schema targetNamespace="http://esb.cla.cl/EnterpriseServices/BusinessFirmaElectronicaTOCExternalService/V1" elementFormDefault="qualified" xmlns:tns="http://esb.cla.cl/EnterpriseServices/BusinessFirmaElectronicaTOCExternalService/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://esb.cla.cl/EnterpriseFaults/GenericFault/V1" xmlns:ns0="http://esb.cla.cl/EnterpriseServices/BusinessFirmaElectronicaTOCExternalService/FirmarDocumento/V1">
+	<xs:import namespace="http://esb.cla.cl/EnterpriseServices/BusinessFirmaElectronicaTOCExternalService/FirmarDocumento/V1" schemaLocation="http://lasiewebdev.ccaf.andes:8080/BusinessFirmaElectronicaTOCExternalService/Proxies/BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachment?SCHEMA%2FBusinessFirmaElectronicaTOCExternalService%2FXSD%2FFirmarDocumento"/>
+	<xs:import namespace="http://esb.cla.cl/EnterpriseFaults/GenericFault/V1" schemaLocation="http://lasiewebdev.ccaf.andes:8080/BusinessFirmaElectronicaTOCExternalService/Proxies/BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachment?SCHEMA%2FBusinessFirmaElectronicaTOCExternalService%2FXSD%2FGenericFault"/>
+	<xs:element name="FirmarDocumentoInput" type="ns0:FirmarDocumentoInputType">
+		<xs:annotation>
+			<xs:documentation>Datos de entrada de la operación "FirmarDocumento".</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FirmarDocumentoOutput" type="ns0:FirmarDocumentoOutputType">
+		<xs:annotation>
+			<xs:documentation>Datos de salida de la operación "FirmarDocumento".</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DocumentoEntradaNoExisteFault" type="ns1:GenericFaultType">
+		<xs:annotation>
+			<xs:documentation>Error producido cuando el nombre del documento de entrada no es encontrado en la ruta especificada.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="StampMarkTipoIncorrectoFault" type="ns1:GenericFaultType">
+		<xs:annotation>
+			<xs:documentation>Error producido cuando el tipo de estampa pasado como parámetro no es uno de los tipos válidos (112, 113).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TrxNumberIncorrectoFault" type="ns1:GenericFaultType">
+		<xs:annotation>
+			<xs:documentation>Error producido cuando el numero de transacción enviado como parámetro no es una transacción valida.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ImagenNoGeneradaFault" type="ns1:GenericFaultType">
+		<xs:annotation>
+			<xs:documentation>Error producido cuando no se genera la imagen del documento debido a un error en los datos enviados.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FaltaStampMarkFault" type="ns1:GenericFaultType">
+		<xs:annotation>
+			<xs:documentation>Error producido cuando falta uno de los parámetros StampMark.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="StampMarkPageInvalidaFault" type="ns1:GenericFaultType">
+		<xs:annotation>
+			<xs:documentation>Error producido cuando la página donde se quiere estampar el documento no es una página válida.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CoordenadasStampMarkInvalidasFault" type="ns1:GenericFaultType">
+		<xs:annotation>
+			<xs:documentation>Error producido cuando las coordenadas en donde se quiere estampar el documento no están dentro del margen válido.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DocumentoEntradaNoEsPDFFault" type="ns1:GenericFaultType">
+		<xs:annotation>
+			<xs:documentation>Error producido cuando el documento de entrada no está en formato PDF.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

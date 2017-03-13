@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://esb.cla.cl/EnterpriseObjects/CCLAMWClients/V1" elementFormDefault="qualified" xmlns:tns="http://esb.cla.cl/EnterpriseObjects/CCLAMWClients/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://esb.cla.cl/EnterpriseObjects/Sistema/V1" xmlns:ns2="http://esb.cla.cl/EnterpriseObjects/Aplicacion/V1">
+	<xs:import namespace="http://esb.cla.cl/EnterpriseObjects/Sistema/V1" schemaLocation="http://lasiewebdev.ccaf.andes:8080/BusinessFirmaElectronicaTOCExternalService/Proxies/BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachment?SCHEMA%2FBusinessFirmaElectronicaTOCExternalService%2FXSD%2FSistema"/>
+	<xs:import namespace="http://esb.cla.cl/EnterpriseObjects/Aplicacion/V1" schemaLocation="http://lasiewebdev.ccaf.andes:8080/BusinessFirmaElectronicaTOCExternalService/Proxies/BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachment?SCHEMA%2FBusinessFirmaElectronicaTOCExternalService%2FXSD%2FAplicacion"/>
+	<xs:complexType name="CCLAMWClientsType">
+		<xs:sequence>
+			<xs:element name="CodigoDelSistema" type="ns1:CodigoDeSistemaType">
+				<xs:annotation>
+					<xs:documentation>Código identificador del Sistema de manera
+						global, dentro del Middleware de Caja Los Andes. Por ejemplo, SAP
+						R/3, SIEBEL, MENU ANDES, Custom, etc.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CodigoDeLaAplicacion" type="ns2:CodigoDeLaAplicacionType">
+				<xs:annotation>
+					<xs:documentation>Código identificador de la Aplicación
+						(implementada) de dicho Sistema, dentro del Middleware de Caja Los
+						Andes. La Aplicación tiene un alcance funcional dentro del
+						negocio. Por ejemplo, CO dentro de SAP R/3, CRE (Crédito) o SIL
+						(Licencias Médicas) dentro de MENU ANDES, etc.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CodigoDelTerminal" type="xs:string" nillable="true">
+				<xs:annotation>
+					<xs:documentation>Código identificador del terminal en caso de que
+						la Aplicación sea distribuida.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CCLAMWClients" type="tns:CCLAMWClientsType"/>
+</xs:schema>

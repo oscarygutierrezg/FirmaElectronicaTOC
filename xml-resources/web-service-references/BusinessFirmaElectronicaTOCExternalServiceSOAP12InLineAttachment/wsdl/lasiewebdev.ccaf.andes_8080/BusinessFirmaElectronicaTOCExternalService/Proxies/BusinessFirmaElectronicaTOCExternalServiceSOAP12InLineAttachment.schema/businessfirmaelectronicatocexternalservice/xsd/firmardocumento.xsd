@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://esb.cla.cl/EnterpriseServices/BusinessFirmaElectronicaTOCExternalService/FirmarDocumento/V1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:tns="http://esb.cla.cl/EnterpriseServices/BusinessFirmaElectronicaTOCExternalService/FirmarDocumento/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://esb.cla.cl/EnterpriseObjects/UbicacionEnDocumento/V1">
+	<xs:import namespace="http://esb.cla.cl/EnterpriseObjects/UbicacionEnDocumento/V1" schemaLocation="http://lasiewebdev.ccaf.andes:8080/BusinessFirmaElectronicaTOCExternalService/Proxies/BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachment?SCHEMA%2FBusinessFirmaElectronicaTOCExternalService%2FXSD%2FUbicacionEnDocumento"/>
+	<xs:complexType name="FirmarDocumentoInputType">
+		<xs:sequence>
+			<xs:element name="Documento" type="xs:base64Binary">
+				<xs:annotation>
+					<xs:documentation>Documento enviado para ser firmado digitalmente.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UbicacionDelSelloCriptograficoMedianteCoordenadas" type="ns2:UbicacionEnDocumentoMedianteCoordenadasType">
+				<xs:annotation>
+					<xs:documentation>Ubicación del sello criptográfico por medio de	coordenadas.		</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EstampaList">
+				<xs:annotation>
+					<xs:documentation>Listado de datos necesarios para la generación y agregado de las Estampas.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Estampa" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Datos necesarios para la generación y agregado de la Estampa.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="CodigoDeTransaccionDeVerificacionDeIdentidadTOC" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>Código de la transacción de verificación de identidad dado por TOC.
+								</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Ubicacion" type="ns2:UbicacionEnDocumentoMedianteCoordenadasType">
+										<xs:annotation>
+											<xs:documentation>Ubicación de la estampa por medio de coordenadas.
+								</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FirmarDocumentoOutputType">
+		<xs:sequence>
+			<xs:element name="Documento" type="xs:base64Binary">
+				<xs:annotation>
+					<xs:documentation>Doumento enviado firmado digitalmente.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

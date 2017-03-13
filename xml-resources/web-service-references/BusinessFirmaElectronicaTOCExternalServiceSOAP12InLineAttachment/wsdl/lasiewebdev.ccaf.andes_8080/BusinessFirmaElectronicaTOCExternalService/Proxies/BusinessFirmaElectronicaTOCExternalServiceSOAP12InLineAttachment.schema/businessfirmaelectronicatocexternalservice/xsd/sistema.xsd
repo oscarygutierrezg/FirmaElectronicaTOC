@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://esb.cla.cl/EnterpriseObjects/Sistema/V1" elementFormDefault="qualified" xmlns:tns="http://esb.cla.cl/EnterpriseObjects/Sistema/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="SistemaType">
+		<xs:annotation>
+			<xs:documentation>Tipo de datos que representa a la entidad de
+				negocio "Sistema".
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Codigo" type="tns:CodigoDeSistemaType">
+				<xs:annotation>
+					<xs:documentation>Código del Sistema.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Nombre" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Nombre del Sistema.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="CodigoDeSistemaType">
+		<xs:annotation>
+			<xs:documentation>Código identificador del Sistema de manera global,
+				dentro del Middleware de Caja Los Andes. Por ejemplo, SAP R/3,
+				SIEBEL, MENU ANDES, Custom, etc.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

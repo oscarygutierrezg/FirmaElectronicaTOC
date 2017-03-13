@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N0:definitions name="BusinessFirmaElectronicaTOCExternalService" targetNamespace="http://esb.cla.cl/EnterpriseServices/BusinessFirmaElectronicaTOCExternalService/V1" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://esb.cla.cl/EnterpriseServices/BusinessFirmaElectronicaTOCExternalService/V1" xmlns:WL5G3N2="http://esb.cla.cl/EnterpriseObjects/CCLAMWClients/V1" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <WL5G3N0:types>
+    <xs:schema xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N4="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns="http://esb.cla.cl/EnterpriseFaults/GenericFault/V1" xmlns:ns0="http://esb.cla.cl/EnterpriseObjects/CCLAMWClients/V1" xmlns:ns2="http://esb.cla.cl/EnterpriseObjects/CoordenadasCartesianas/V1" xmlns:ns3="http://esb.cla.cl/EnterpriseServices/BusinessFirmaElectronicaTOCExternalService/FirmarDocumento/V1" xmlns:ns4="http://esb.cla.cl/EnterpriseObjects/UbicacionDeMarca/V1" xmlns:ns5="http://esb.cla.cl/EnterpriseObjects/UbicacionEnDocumento/V1" xmlns:ns6="http://esb.cla.cl/EnterpriseObjects/Aplicacion/V1" xmlns:ns7="http://esb.cla.cl/EnterpriseObjects/Sistema/V1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://esb.cla.cl/EnterpriseServices/BusinessFirmaElectronicaTOCExternalService/V1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://esb.cla.cl/EnterpriseServices/BusinessFirmaElectronicaTOCExternalService/V1" schemaLocation="http://lasiewebdev.ccaf.andes:8080/BusinessFirmaElectronicaTOCExternalService/Proxies/BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachment?SCHEMA%2FBusinessFirmaElectronicaTOCExternalService%2FXSD%2FBusinessFirmaElectronicaTOCExternalService"/>
+      <xs:import namespace="http://esb.cla.cl/EnterpriseObjects/CCLAMWClients/V1" schemaLocation="http://lasiewebdev.ccaf.andes:8080/BusinessFirmaElectronicaTOCExternalService/Proxies/BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachment?SCHEMA%2FBusinessFirmaElectronicaTOCExternalService%2FXSD%2FCCLAMWClients"/>
+    </xs:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="FirmarDocumentoInputMessage">
+    <WL5G3N0:part element="WL5G3N1:FirmarDocumentoInput" name="FirmarDocumentoInputMessagePart"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="FirmarDocumentoOutputMessage">
+    <WL5G3N0:part element="WL5G3N1:FirmarDocumentoOutput" name="FirmarDocumentoOutputMessagePart"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="DocumentoEntradaNoExisteFaultMessage">
+    <WL5G3N0:part element="WL5G3N1:DocumentoEntradaNoExisteFault" name="DocumentoEntradaNoExisteFaultMessagePart"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="StampMarkTipoIncorrectoFaultMessage">
+    <WL5G3N0:part element="WL5G3N1:StampMarkTipoIncorrectoFault" name="StampMarkTipoIncorrectoFaultMessagePart"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="TrxNumberIncorrectoFaultMessage">
+    <WL5G3N0:part element="WL5G3N1:TrxNumberIncorrectoFault" name="TrxNumberIncorrectoFaultMessagePart"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ImagenNoGeneradaFaultMessage">
+    <WL5G3N0:part element="WL5G3N1:ImagenNoGeneradaFault" name="ImagenNoGeneradaFaultMessagePart"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="FaltaStampMarkFaultMessage">
+    <WL5G3N0:part element="WL5G3N1:FaltaStampMarkFault" name="FaltaStampMarkFaultMessagePart"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="StampMarkPageInvalidaFaultMessage">
+    <WL5G3N0:part element="WL5G3N1:StampMarkPageInvalidaFault" name="StampMarkPageInvalidaFaultMessagePart"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="CoordenadasStampMarkInvalidasFaultMessage">
+    <WL5G3N0:part element="WL5G3N1:CoordenadasStampMarkInvalidasFault" name="CoordenadasStampMarkInvalidasFaultMessagePart"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="DocumentoEntradaNoEsPDFFaultMessage">
+    <WL5G3N0:part element="WL5G3N1:DocumentoEntradaNoEsPDFFault" name="DocumentoEntradaNoEsPDFFaultMessagePart"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="CCLAMWClientsHeaderMessage">
+    <WL5G3N0:part element="WL5G3N2:CCLAMWClients" name="CCLAMWClientsHeaderMessagePart"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="BusinessFirmaElectronicaTOCExternalServicePortType">
+    <WL5G3N0:operation name="FirmarDocumento">
+      <WL5G3N0:documentation>Operación para firmar digitalmente el archivo enviado</WL5G3N0:documentation>
+      <WL5G3N0:input message="WL5G3N1:FirmarDocumentoInputMessage"/>
+      <WL5G3N0:output message="WL5G3N1:FirmarDocumentoOutputMessage"/>
+      <WL5G3N0:fault message="WL5G3N1:DocumentoEntradaNoExisteFaultMessage" name="DocumentoEntradaNoExisteFault">
+        <WL5G3N0:documentation>Error producido cuando el nombre del documento de entrada no es encontrado en la ruta especificada.</WL5G3N0:documentation>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault message="WL5G3N1:StampMarkTipoIncorrectoFaultMessage" name="StampMarkTipoIncorrectoFault">
+        <WL5G3N0:documentation>Error producido cuando el tipo de estampa pasado como parámetro no es uno de los tipos válidos (112, 113).</WL5G3N0:documentation>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault message="WL5G3N1:TrxNumberIncorrectoFaultMessage" name="TrxNumberIncorrectoFault">
+        <WL5G3N0:documentation>Error producido cuando el numero de transacción enviado como parámetro no es una transacción valida.</WL5G3N0:documentation>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault message="WL5G3N1:ImagenNoGeneradaFaultMessage" name="ImagenNoGeneradaFault">
+        <WL5G3N0:documentation>Error producido cuando no se genera la imagen del documento debido a un error en los datos enviados.</WL5G3N0:documentation>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault message="WL5G3N1:FaltaStampMarkFaultMessage" name="FaltaStampMarkFault">
+        <WL5G3N0:documentation>Error producido cuando falta uno de los parámetros StampMark.</WL5G3N0:documentation>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault message="WL5G3N1:StampMarkPageInvalidaFaultMessage" name="StampMarkPageInvalidaFault">
+        <WL5G3N0:documentation>Error producido cuando la página donde se quiere estampar el documento no es una página válida.</WL5G3N0:documentation>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault message="WL5G3N1:CoordenadasStampMarkInvalidasFaultMessage" name="CoordenadasStampMarkInvalidasFault">
+        <WL5G3N0:documentation>Error producido cuando las coordenadas en donde se quiere estampar el documento no están dentro del margen válido.</WL5G3N0:documentation>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault message="WL5G3N1:DocumentoEntradaNoEsPDFFaultMessage" name="DocumentoEntradaNoEsPDFFault">
+        <WL5G3N0:documentation>Error producido cuando el documento de entrada no está en formato PDF.</WL5G3N0:documentation>
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachmentBinding" type="WL5G3N1:BusinessFirmaElectronicaTOCExternalServicePortType">
+    <WL5G3N3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="FirmarDocumento">
+      <WL5G3N3:operation soapAction="http://esb.cla.cl/EnterpriseServices/BusinessFirmaElectronicaTOCExternalService/V1/FirmarDocumento"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CCLAMWClientsHeaderMessage" part="CCLAMWClientsHeaderMessagePart" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="DocumentoEntradaNoExisteFault">
+        <WL5G3N3:fault name="DocumentoEntradaNoExisteFault" use="literal"/>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault name="StampMarkTipoIncorrectoFault">
+        <WL5G3N3:fault name="StampMarkTipoIncorrectoFault" use="literal"/>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault name="TrxNumberIncorrectoFault">
+        <WL5G3N3:fault name="TrxNumberIncorrectoFault" use="literal"/>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault name="ImagenNoGeneradaFault">
+        <WL5G3N3:fault name="ImagenNoGeneradaFault" use="literal"/>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault name="FaltaStampMarkFault">
+        <WL5G3N3:fault name="FaltaStampMarkFault" use="literal"/>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault name="StampMarkPageInvalidaFault">
+        <WL5G3N3:fault name="StampMarkPageInvalidaFault" use="literal"/>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault name="CoordenadasStampMarkInvalidasFault">
+        <WL5G3N3:fault name="CoordenadasStampMarkInvalidasFault" use="literal"/>
+      </WL5G3N0:fault>
+      <WL5G3N0:fault name="DocumentoEntradaNoEsPDFFault">
+        <WL5G3N3:fault name="DocumentoEntradaNoEsPDFFault" use="literal"/>
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="BusinessFirmaElectronicaTOCExternalService">
+    <WL5G3N0:port binding="WL5G3N1:BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachmentBinding" name="BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachmentPort">
+      <WL5G3N3:address location="http://lasiewebdev.ccaf.andes:8080/BusinessFirmaElectronicaTOCExternalService/Proxies/BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachment"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

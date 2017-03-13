@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://esb.cla.cl/EnterpriseObjects/UbicacionEnDocumento/V1" elementFormDefault="qualified" xmlns:tns="http://esb.cla.cl/EnterpriseObjects/UbicacionEnDocumento/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://esb.cla.cl/EnterpriseObjects/CoordenadasCartesianas/V1">
+	<xs:import namespace="http://esb.cla.cl/EnterpriseObjects/CoordenadasCartesianas/V1" schemaLocation="http://lasiewebdev.ccaf.andes:8080/BusinessFirmaElectronicaTOCExternalService/Proxies/BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachment?SCHEMA%2FBusinessFirmaElectronicaTOCExternalService%2FXSD%2FCoordenadasCartesianas"/>
+	<xs:complexType name="UbicacionEnDocumentoMedianteCoordenadasType">
+		<xs:annotation>
+			<xs:documentation>Tipo de datos que representa a la entidad
+				"UbicacionEnDocumentoMedianteCoordenadas".
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NumeroDePagina" type="xs:integer">
+				<xs:annotation>
+					<xs:documentation>Número de página del documento.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CoordenadasCartesianas" type="ns1:CoordenadasCartesianasType">
+				<xs:annotation>
+					<xs:documentation>Coordenadas cartesianas de la ubicación, dentro de la página del documento.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

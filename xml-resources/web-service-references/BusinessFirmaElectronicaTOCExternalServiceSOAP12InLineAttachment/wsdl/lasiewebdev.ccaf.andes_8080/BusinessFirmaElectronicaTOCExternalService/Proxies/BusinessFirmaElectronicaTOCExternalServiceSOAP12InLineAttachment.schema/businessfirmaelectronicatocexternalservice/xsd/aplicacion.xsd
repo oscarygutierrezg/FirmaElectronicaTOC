@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://esb.cla.cl/EnterpriseObjects/Aplicacion/V1" elementFormDefault="qualified" xmlns:tns="http://esb.cla.cl/EnterpriseObjects/Aplicacion/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://esb.cla.cl/EnterpriseObjects/Sistema/V1">
+	<xs:import namespace="http://esb.cla.cl/EnterpriseObjects/Sistema/V1" schemaLocation="http://lasiewebdev.ccaf.andes:8080/BusinessFirmaElectronicaTOCExternalService/Proxies/BusinessFirmaElectronicaTOCExternalServiceSOAP12InLineAttachment?SCHEMA%2FBusinessFirmaElectronicaTOCExternalService%2FXSD%2FSistema"/>
+	<xs:complexType name="AplicacionType">
+		<xs:annotation>
+			<xs:documentation>Tipo de datos que representa a la entidad de
+				negocio "Aplicación".
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CodigoDelSistema" type="ns1:CodigoDeSistemaType">
+				<xs:annotation>
+					<xs:documentation>Código del Sistema.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CodigoDeLaAplicacion" type="tns:CodigoDeLaAplicacionType">
+				<xs:annotation>
+					<xs:documentation>Código de la Aplicación.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Nombre" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Nombre de la Aplicación.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="CodigoDeLaAplicacionType">
+		<xs:annotation>
+			<xs:documentation>Código identificador de la Aplicación
+				(implementada) de un Sistema, dentro del Middleware de Caja Los
+				Andes. La Aplicación tiene un alcance funcional dentro del negocio.
+				Por ejemplo, CO dentro de SAP R/3, CRE (Crédito) o SIL (Licencias
+				Médicas) dentro de MENU ANDES, etc.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
